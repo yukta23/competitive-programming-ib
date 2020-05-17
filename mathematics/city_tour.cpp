@@ -53,7 +53,7 @@ int Solution::solve(int A, vector<int> &B) {
         sum_power+=chunks[i]-1;
     }
     // int ans=(fact[total_unvisited]*power(2,sum_power))/den;
-    long long numerator=((fact[total_unvisited]%mod)*power(2,sum_power)%mod)%mod;
+    long long numerator=((fact[total_unvisited]%mod)*power(2,sum_power)%mod)%mod; //multiplying all three at same time can result in overflow
     long long ans=numerator*(power(den,mod-2)%mod);
     return ans%mod;
 }
